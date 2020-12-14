@@ -1,0 +1,93 @@
+<br>
+<br>
+
+<br>
+<br>
+<div class="container">
+
+{% if service.cancel_user%}
+
+<p class="text-danger"><b>Service Is Cancelled By You!!!</b></p>
+
+{% endif %}
+{% if service.cancel_servicer%}
+
+<p class="text-danger"><b>Service Is Cancelled By Servicer!!!</b></p>
+
+{% endif %}
+
+<form method="POST">
+{% csrf_token %}
+  <div class="form-group">
+
+    <label for="exampleInputEmail1"><b>SERVICE ID: SVC{{service.pk}}</b> </label><hr><br>
+  
+    <label for="exampleInputEmail1">Date </label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="{{service.created_at}}" readonly>
+    </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Servicer</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" value="{{service.servicer}}" readonly>
+  </div>
+   
+  <div class="form-group">
+    <label for="exampleInputPassword1">Mobile</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" value="{{service.servicer.mobile }}" readonly>
+  </div>
+  <hr>
+    <div class="form-group">
+    
+    <label for="exampleInputPassword1">Problem</label>
+    <hr>
+    <label for="exampleInputPassword1">Problem Explaination</label>
+   <textarea class="form-control" readonly>{{service.problem}}</textarea>
+   <br>
+   <label for="exampleInputPassword1">Product Image</label>
+   <br>
+   <img src="/media/{{service.problem_image}}" width="100" height="100" />
+     </div>     
+  <hr>
+  
+   <div class="form-group">
+    <label for="exampleInputPassword1">Vehicle Information</label>
+    <hr>
+     <label for="exampleInputPassword1">Vehicle</label>
+     <input type="text" class="form-control"  id="exampleInputPassword1" value="{{service.vehicle_fk }}" readonly>
+    
+   <br>
+  </div>
+    {% if not service.cancel_user  and not service.cancel_servicer%}
+  <div class="form-group">
+
+  <hr>
+ 
+    <label for="exampleInputPassword1">Service Status</label>
+    <hr>
+
+    Accept &nbsp;&nbsp;&nbsp;<input disabled type="checkbox" value="True" name="accept" {% if service.accept%} checked {% endif %}  > 
+    <br>
+
+    Solved &nbsp;&nbsp;&nbsp;<input  disabled name="solved"  value="True" type="checkbox" {% if service.accept%} {% if service.solved %} checked {% endif %}{% endif %}  > 
+  <br>
+  <br>
+    <label for="exampleInputPassword1">Servicer Remarks</label>
+    <textarea class="form-control" readonly name="remark">{{service.remarks}}</textarea>
+     <hr>
+     <label for="exampleInputPassword1">After Service Please Provide Review Here</label>
+   <hr>
+     <label for="exampleInputPassword1">Review</label>
+    <textarea class="form-control" name="review" {% if service.solved %}{%else%} readonly {%endif%}>{{service.review}}</textarea>
+  
+  </div>
+  <p class="text-danger">*Please Note That Per Visit Service Charge Is 200 INR That You Need To Pay To The Mechanic.</p>
+  {% if not service.solved %}
+  <a href="{% url 'can_service' service.pk%}" class="btn btn-danger">Cancel Service</a>
+  {% endif%}
+  <button type="submit" class="btn btn-primary">Save Changes</button>
+
+  {% endif %}
+</form>
+</div>
+<br>
+<br>
+<br>

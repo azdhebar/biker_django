@@ -1,0 +1,62 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container " >
+<div class="card-page">
+
+{% include 'shared/component/error_component.html' %}
+            <h3 class="fw-normal">Register</h3>
+            <form method="POST"   class="mt-3">
+                {% csrf_token %}
+              <div class="form-group">
+                <label for="name" class="fw-medium fg-grey">Username</label>
+                <input type="text" name="username" class="form-control" id="name" required>
+              </div>
+                   <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">Email</label>
+                <input type="email"  name="email" class="form-control" id="email" required>
+              </div>
+                 <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">Mobile Number</label>
+                <input type="number" class="form-control" name="mobile" id="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">Password</label>
+                <input type="password"  name = "password" class="form-control" id="email" required>
+
+              </div>
+                <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">Re-Password</label>
+                <input type="password" name= "repassword" class="form-control" id="email" required>
+              </div>
+                  <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">Address First Line</label>
+                <input type="text" class="form-control"  name="ad_fl" id="email" required>
+              </div>
+                     <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">Address Second Line</label>
+                <input type="text" class="form-control" name="ad_sl" id="email" required>
+              </div>
+                     <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">City</label>
+                <input type="text" class="form-control" name="city" id="email" required>
+              </div>
+                <div class="form-group">
+                <label for="email" class="fw-medium fg-grey">Zip</label>
+                <input type="text" class="form-control" name="zip" id="email" required>
+              </div>
+
+
+                <input type="checkbox" value="True"  id="email"  name="servicer">
+                    <label for="email" class="fw-medium fg-grey"> &nbsp;&nbsp;You Are Servicer ?</label>
+
+              <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <br><br><a href="/signin" class="text-dark" style="text-decoration:none"> Already Registered ?</a>
+              </div>
+            </form>
+          </div>
+  </div>
+<br>

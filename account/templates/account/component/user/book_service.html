@@ -1,0 +1,54 @@
+<br>
+<br>
+
+<br>
+<br>
+<div class="container">
+<form method="POST" enctype='multipart/form-data'>
+{% csrf_token %}
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Servicer</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" value="{{servicer.user}}" readonly>
+  </div>
+   
+  <div class="form-group">
+    <label for="exampleInputPassword1">Mobile</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" value="{{servicer.mobile }}" readonly>
+  </div>
+  <hr>
+    <div class="form-group">
+    
+    <label for="exampleInputPassword1">Problem</label>
+    <hr>
+    <label for="exampleInputPassword1">Problem Explaination</label>
+   <textarea class="form-control" name="problem" required>{{service.problem}}</textarea>
+   <br>
+   <label for="exampleInputPassword1">Bike Image </label>
+   <br>
+  <input type="file" name="problem_image">
+     </div>     
+  <hr>
+  
+   <div class="form-group">
+    <label for="exampleInputPassword1">Vehicle Information</label>
+    <hr>
+     <label for="exampleInputPassword1">Vehicle</label>
+     <input type="text" class="form-control"  id="exampleInputPassword1" value="{{vehicle.vehicle_number }}" readonly>
+    <br>
+    <label for="exampleInputPassword1">Model</label>
+     <input type="text" class="form-control"  id="exampleInputPassword1" value="{{vehicle.model_fk }}" readonly>
+      <br>
+    <label for="exampleInputPassword1">Brand</label>
+     <input type="text" class="form-control"  id="exampleInputPassword1" value="{{vehicle.model_fk.brand }}" readonly>
+   <br>
+  </div>
+
+ 
+  <p class="text-danger">*Please Note That Per Visit Service Charge Is 200 INR That You Need To Pay To The Mechanic.</p>
+  <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+</div>
+<br>
+<br>
+<br>

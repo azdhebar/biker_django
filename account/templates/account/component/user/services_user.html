@@ -1,0 +1,75 @@
+<br>
+<br>
+
+<br>
+<br>
+<html lang="en">
+<head>
+
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="container">
+{% include 'shared/component/error_component.html' %}
+  <div>
+  <h2>Services</h2><span></span>
+  </div>
+  <br>
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Service Id</th>
+        <th>Date</th>
+        <th>Servicer</th>
+        <th>Model</th>
+        <th>Brand</th>
+        <th>Vehicle Number</th>
+        <th>Accepted</th>
+        <th>Solved</th>
+        <th>See</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    {% if services %}
+    {% for s in services%}
+      <tr>
+      <td>{{forloop.counter}}</td>
+      <th>SVC{{s.pk}}</th>
+       <td>{{s.created_at}}</td>
+     
+        <td>{{s.servicer}}</td>
+        <td>{{s.model_fk.model_name}}</td>
+        <td>{{s.brand.brand}}</td>
+          <td>{{s.vehicle_fk}}</td>
+        <td>{{s.accept}}</td>
+        <td>{{s.solved}}</td>
+        <td><a href="{% url 'see_service_user' s.pk%}" class="btn btn-primary rounded-pill text-white" >See</a></td>
+      </tr>
+    {% endfor %}
+   {% else %}
+    <tr> 
+    <td rowspan="4">No Data Found!!.</td></tr>
+
+   {% endif %}
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+<!-- Add Vehicle -->
+
+</body>
+</html>
+<br>
+<br>
+<br>
+
+<br>
