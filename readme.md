@@ -4,12 +4,29 @@
 
 
 install python 3.8 or up
+
+
+
 install django using pip install django
+
+
+
 install pip install django-cors-headers
+
+
+
 install pip install djangorestframework
+
+
 install pip install markdown       # Markdown support for the browsable API.
+
+
 install pip install django-filter  # Filtering support
+
+
 install pip install django-rest-knox
+
+
 install pip install pillow
 
 
@@ -76,8 +93,12 @@ http://127.0.0.1:8000/account/api/register/ (username,password,email)
 it gives whole user after success
 
 after that you need to create account using that user
+
+
 using POST METHOD and account url
- "account": "http://127.0.0.1:8000/account/api/account/",
+
+
+"account": "http://127.0.0.1:8000/account/api/account/",
 
 
 please go to http://127.0.0.1:8000/account/api/
@@ -86,6 +107,10 @@ please go to http://127.0.0.1:8000/account/api/
 to test all the api
 
 CRUD MODELS:{
+  
+  
+  
+  
     "account": "http://127.0.0.1:8000/account/api/account/",
     
     
