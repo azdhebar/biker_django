@@ -1,4 +1,8 @@
 -------------------------------------------------------Requirements-------------------------------------
+
+
+
+
 install python 3.8 or up
 install django using pip install django
 install pip install django-cors-headers
@@ -8,10 +12,23 @@ install pip install django-filter  # Filtering support
 install pip install django-rest-knox
 install pip install pillow
 
+
+
+
+
 --------------------------------------------------------------------------------------------------------
 
 
+
+
+
+
 ---------------------------------------------------STEPS TO START SERVER-----------------------------------
+
+
+
+
+
 
 1. go to biker-master
 2. run the command "python manage.py makemigrations"
@@ -19,10 +36,25 @@ install pip install pillow
 4. run the command "python manage.py runserver"
 5. So Server started
 
+
+
+
+
+
 ------------------------------------------------------------------------------------------------------------
 
 
+
+
+
+
 -------------------------------------------------------------------------API ---------------------------------------------------------------------
+
+
+
+
+
+
 for login
 METHOD:POST
 http://127.0.0.1:8000/account/api/login/
