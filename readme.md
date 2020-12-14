@@ -142,5 +142,5 @@ to find servicer which provide service of same model and in same zip code area
 
 
 
-http://127.0.0.1:8000/account/api/service/findservice/vehicle/<vehicle:id>/zip/<zipcode>
+http://127.0.0.1:8000/account/api/service/findservice/vehicle/<vehicle:id>/zip/<zipcode:zip>
 
